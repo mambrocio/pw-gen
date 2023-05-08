@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Password Generator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+    <section class="container clearfix">
+        <h1>Password Generator</h1>
+
+        <h2>Enter your character limit<br>
+            Must be between a minimum of 8 to a maximum of 128 characters
+        </h2>
+
+        <input class="char-limit-box" type="number" name="characterLimit">
+    
+        <h2>Word or phrase you can remember for your password, keep in mind of the character limit</h2>
+        <input class="phrase-box" type="text" name="phrase" placeholder="Optional">
+
+        <h3>Password Style</h3>
+
+        <input type="checkbox" id="randNumb" name="random-number-box">
+        <label for = "random-number-check">Generate Numbers</label>
+
+        <input type="checkbox" id="randUpCase" name="random-upper-case">
+        <label for = "random-upper-case-box">Random Upper Case</label>
+
+        <input type="checkbox" id="randLowCae" name="random-lower-case">
+        <label for = "random-upper-case-box">Random Lower Case</label>
+
+        <h3>Special Character Cases</h3>
+
+        <input type="checkbox" id="exPoint" name="exclamationPoint" value = "!">
+        <label for = "!">!</label>
+
+        <input type="checkbox" id="pd" name="period" value=".">
+        <label for = ".">.</label>
+
+        <input type = "checkbox" id="ampSans" name="amper-sign" value="^">
+        <label for = "&">&</label>
+
+        <input type = "checkbox" id="poundHash" name="poundAndHash" value="#">
+        <label for = "#">#</label>
+
+        <input type = "checkbox" id="dolSign" name="dollar-sign" value="$">
+        <label for = "$">$</label>
+
+        <input type = "checkbox" id="pctSign" name="percent-sign" value="%">
+        <label for = "%">%</label>
+
+        <input type = "checkbox" id="ampSans" name="amper-sign" value="^">
+        <label for = "&">&</label>
+
+        <input type = "checkbox" id="up" name="up-sign" value="^">
+        <label for = "^">^</label>
+
+        <input type = "checkbox" id="minSign" name="minus-sign" value="-">
+        <label for = "-">-</label>
+
+        <input type = "checkbox" id="plSign" name="plus-sign" value="+">
+        <label for = "+">+</label>
+        
+        <input type = "checkbox" id="eqSign" name="equal-sign" value="=">
+        <label for = "equal">=</label>
+
+        <input type = "checkbox" id="leftBrack" name="left-bracket-sign" value="[">
+        <label for = "[">[</label>
+
+        <input type = "checkbox" id="rightBrack" name="right-bracket-sign" value="]">
+        <label for = "]">]</label>
+
+        <input type = "checkbox" id="sepLine" name="pipe-symbol" value="|">
+        <label for = "|">|</label>
+
+        <input type="checkbox" id="undLine" name="under-line" value="_">
+        <label for="&">_</label>
+
+        <input type = "checkbox" id="colSign" name="colon-sign" value=":">
+        <label for = ":">|</label>
+
+        <input type = "checkbox" id="semCol" name="semicolon-sign" value=";">
+        <label for = ";">;</label>
+
+        <input type = "checkbox" id="til" name="tilde-sign" value="~">
+        <label for = "~">~</label>
+        <br>
+        <button>Generate Password</button>
+    </section>    
+
+    <section class="password container clearfix">
+        <textarea readonly id="printedPass" placeholder="Password Will Be Generated Here"></textarea>
+    </section>
+
+        <script async src=""></script>
+=======
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+    <body>
+<main>
+<section class="container clearfix">
+    <h1 class="pass-header">Password Generator</h1>
+        <div class="main-preset">
+            <div class="number-preset">
+            <h2>Enter your character limit
+            Must be between a minimum of 8 to a maximum of 128 characters
+            </h2>
+
+        <input class="char-limit-box" id="charLimit" type="number" name="characterLimit">
+        </div>
+        <h3>Password Style</h3>
+        <div class="char-changer">
+        <div class="gen-select">
+            <input type="checkbox" id="randNumb" name="random-number-box">
+            <label for="random-number-check">Generate Numbers</label>
+        </div>
+        <div class="gen-select">
+            <input type="checkbox" id="randUpCase" name="random-upper-case">
+            <label for = "random-upper-case-box">Random Upper Case</label>
+        </div>
+        <div class="gen-select">
+            <input type="checkbox" id="randLowCase" name="random-lower-case">
+            <label for = "random-upper-case-box">Random Lower Case</label>
+        </div>
+        <div class="gen-select">    
+            <input type="checkbox" id="randCases" name="random-special-case">
+            <label for = "random-special-case-box">Random Character Cases</label>
+        </div>
+
+    </div>    
+    <button onclick="generatePW()">Generate Password</button>
+    </div>
+    </section>    
+
+    <section class="password container clearfix">
+        <textarea readonly id="printedPass" maxlength="129" placeholder="Password Will Be Generated Here"></textarea>
+        <br>
+    </section>
+    <section>
+        <button onclick="copyFunction()">Copy Password</button>
+    </section>
+        <script async src="scripts/main.js"></script>
+        </main>
+>>>>>>> 44a43c3b7071806a3525035ddf53fa5e29d4a046
+    </body>
+</html>
