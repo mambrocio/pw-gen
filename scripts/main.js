@@ -20,9 +20,9 @@ function passGen(){
     let cases = document.getElementById("randCases")
 
     if(charLimit.value > charMaxLength)
-    alert("Password exceeds the character count of 128")
+    document.getElementById("printedPass").innerHTML = "Password exceeds the character count of 128"
         else if (charLimit.value < charMinLength)
-    alert("Please enter a password set value of at least 8")
+        document.getElementById("printedPass").innerHTML = "Please enter a password set value of at least 8"
     else{
         let charLength = charLimit.value
         console.log(charLength) 
