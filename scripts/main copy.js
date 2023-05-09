@@ -10,14 +10,14 @@ let charCaseRandom = '!@#$%^&,[];<>/?'
 let charLimit = document.getElementById("charLimit");
 
 
-
+function numberGen(){
     checkboxNumb = document.getElementById("randNumb");
     checkboxNumb.addEventListener('change', function(e){
     num = checkboxNumb
     //console.log(checkboxNumb.checked)
     return num;
-    })
-
+})
+}
 
 function upperGen(){
     checkboxUp = document.getElementById("randUpCase");
@@ -47,7 +47,7 @@ function caseGen(){
 });
 }
 
-
+numberGen()
 upperGen()
 lowerGen()
 caseGen()
@@ -66,7 +66,7 @@ function generatePW(num, tall, short, addCases){
     let finalPass ='';
 
     do {
-        if(num === false && tall === true && short === true && addCases === true)
+        if(num == true && tall === true && short === true && addCases === true)
         try {
             let digits = num.checked;
             console.log(digits)
@@ -83,7 +83,7 @@ function generatePW(num, tall, short, addCases){
             console.log(e)
         }
     
-        allCombined = charUpCases + charLowCases + charCaseRandom
+        allCombined = + numbers + charUpCases + charLowCases + charCaseRandom
             while(finalPass.length < charLimit.value){
                 finalPass += allCombined[Math.floor(Math.random() * allCombined.length)]
             }
@@ -102,7 +102,7 @@ function copyFunction() {
 
     // Select the text field
     copyText.select();
-    copyText.setSelectionRange(0, 99999); // For mobile devices
+    copyText.setSelectionRange(0, 129); // For mobile devices
 
      // Copy the text inside the text field
     navigator.clipboard.writeText(copyText.value);

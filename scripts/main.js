@@ -10,49 +10,14 @@ let charCaseRandom = '!@#$%^&,[];<>/?'
 let charLimit = document.getElementById("charLimit");
 
 
-function numberGen(){
-    checkboxNumb = document.getElementById("randNumb");
-    checkboxNumb.addEventListener('change', function(e){
-    num = checkboxNumb
-    //console.log(checkboxNumb.checked)
-    return num;
-    });
-}
+function passGen(){
 
-function upperGen(){
-    checkboxUp = document.getElementById("randUpCase");
-    checkboxUp.addEventListener('change', function(e) {
-    up = checkboxUp
-    //console.log(checkboxUp.checked)
-    return up
-});
-}
+    let finalPass ='';
 
-function lowerGen(){
-    checkboxLow = document.getElementById("randLowCase");
-    checkboxLow.addEventListener('change', function(e){
-    low = checkboxLow
-    //console.log(checkboxLow.checked);
-    return low;
-
-});
-}
-
-function caseGen(){
-    checkboxCases = document.getElementById("randCases");
-    checkboxCases.addEventListener('change', function(e){
-    cases = checkboxCases
-    //console.log(checkboxCases.checked)
-    return cases;
-});
-}
-
-numberGen()
-upperGen()
-lowerGen()
-caseGen()
-
-function generatePW(){
+    let digits = document.getElementById("randNum")
+    let upper = document.getElementById("randUpCase")
+    let lower = document.getElementById("randLowCase")
+    let cases = document.getElementById("randCases")
 
     if(charLimit.value > charMaxLength)
     alert("Password exceeds the character count of 128")
@@ -63,37 +28,46 @@ function generatePW(){
         console.log(charLength) 
     }
 
-    let finalPass ='';
+    if (digits.checked && upper.checked && lower.checked && cases.checked && charLimit.value < charMaxLength && charLimit.value> charMinLength){
 
-    try {
-        let digits = num.checked;
-        console.log(digits)
-
-        let tall = up.checked;
-        console.log(tall)
-
-        let short = low.checked;
-        console.log(short)
-
-        let addCases = cases.checked;
-        console.log(addCases)
-    } catch (e){
-        console.log(e)
+    allCombined = numbers + charUpCases + charLowCases + charCaseRandom
+    while(finalPass.length < charLimit.value ){
+        finalPass += allCombined[Math.floor(Math.random() * allCombined.length)]
     }
+    document.getElementById("printedPass").innerHTML = finalPass
 
-    do {
-        if(num === false && tall === true && short === true && addCases === true)
+
+} else if(upper.checked && lower.checked && cases.checked && charLimit.value < charMaxLength && charLimit.value > charMinLength){
     
-        var allCombined = numbers + charUpCases + charLowCases + charCaseRandom
-            while(finalPass.length < charLimit.value){
-                finalPass += allCombined[Math.floor(Math.random() * allCombined.length)]
-            }
-            document.getElementById("printedPass").innerHTML = finalPass;
-        
-    } while (charLimit > charMinLength && charLimit < charMaxLength) 
+    tallCombined = charUpCases + charLowCases + charCaseRandom
+    while(finalPass.length < charLimit.value ){
+        finalPass += tallCombined[Math.floor(Math.random() * tallCombined.length)]
+    }
+    document.getElementById("printedPass").innerHTML = finalPass
+} else if (lower.checked && cases.checked && charLimit.value < charMaxLength && charLimit.value > charMinLength){
+
+    lowCombined = charLowCases + charCaseRandom
+    while(finalPass.length < charLimit.value ){
+        finalPass += lowCombined[Math.floor(Math.random() * lowCombined.length)]
+    } 
+    document.getElementById("printedPass").innerHTML = finalPass
+} else if (cases.checked && charLimit.value < charMaxLength && charLimit.value > charMinLength){
+    
+    oneCombine = charCaseRandom
+    while(finalPass.length < charLimit.value ){
+        finalPass += oneCombine[Math.floor(Math.random() * oneCombine.length)]
 }
+    document.getElementById("printedPass").innerHTML = finalPass
 
+} else if(digits.checked && upper.checked && lower.checked && charLimit.value < charMaxLength && charLimit.value> charMinLength){
 
+    numSubComboOne = numbers + charUpCases + charLowCases 
+    while(finalPass.length < charLimit.value ){
+        finalPass += numSubComboOne[Math.floor(Math.random() * numSubComboOne.length)]
+}
+    document.getElementById("printedPass").innerHTML = finalPass
+}
+}
 
 //Copy Clipboard Function from https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
 
